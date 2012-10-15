@@ -4,6 +4,9 @@ var connect = require('connect')
     , io = require('socket.io')
     , port = (process.env.PORT || 8081);
 
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://localhost/ducklings');
+
 //Setup Express
 var server = express.createServer();
 server.configure(function(){
@@ -49,7 +52,13 @@ io.sockets.on('connection', function(socket){
     console.log('Client Disconnected.');
   });
 });
+var Content =  require('./models/content');
 
+console.log(db);
+
+Content.find({key:"mission"},function(arr,data){
+  console.log(data);
+});
 
 ///////////////////////////////////////////
 //              Routes                   //
@@ -59,13 +68,35 @@ io.sockets.on('connection', function(socket){
 
 server.get('/', function(req,res){
   res.render('index.jade', {
+
     locals : { 
-              title : 'Your Page Title'
-             ,description: 'Your Page Description'
-             ,author: 'Your Name'
+              title : 'Node Test'
+             ,description: ''
+             ,author: 'Neil Delargy <neildelargy@gmail.com>'
              ,analyticssiteid: 'XXXXXXX' 
             }
   });
+});
+
+server.get('/content/:key/edit', function(req, res){
+  //  var content = content.find
+  res.render('content/edit.jade'), {
+    locals : {
+      title: "Edit Content"
+      ,analyticssiteid: 'XXXXXXX' 
+    }
+  }
+});
+
+server.get('/insert/:key/edit', function(req, res){
+  var aaron = new Content({"title" : "MISSION", "body" : "Centre ext though", "key" : "mission"});
+  aaron.save( function(err){
+    if(err){
+      console.log(err);
+    }
+  });
+  //  var content = content.find
+  res.render("inserted");
 });
 
 

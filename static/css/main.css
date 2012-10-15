@@ -1,0 +1,53 @@
+.navbar ul.nav {
+  float: right;
+}
+
+#carousel {
+  height: 300px;
+  background: #F3F3F3 url(../images/jumping-woman-with-boxing-gloves.jpeg) no-repeat center center;
+}
+
+#circles {
+  margin: 20px auto;
+}
+
+#circles article {
+  height: 300px;
+  border-radius: 155px;
+}
+#circles .padded-content {
+  padding: 50px;
+}
+article#circle-programs {
+  background: #eb8000;
+}
+article#circle-mission {
+  text-align: center;
+  background: #fefa01;
+}
+article#circle-vision {
+  background: #c22945;
+}
+#uniquesellingpoints {
+  background: #F7F5EF;
+}
+
+
+#uniquesellingpoints div.usp-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  float: left;
+  margin: 10px;
+}
+
+#usp-staff div.usp-img {
+  background: url(../images/76730745.jpg);
+  background-size: 200px;
+  background-position: top center;
+}
+#usp-methods div.usp-img {
+  background: url(../images/87968373-construction-worker-gesturing.jpg);
+  background-size: 200px;
+  background-position: top center;
+}

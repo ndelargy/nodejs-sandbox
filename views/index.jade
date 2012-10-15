@@ -1,6 +1,52 @@
 extends layout
 
 block content
-	div
-		a(id='sender')='Send a Message'
-		ul(id='receiver')
+  section#carousel.container
+  section#circles.container
+    .row
+      article#circle-programs.span4
+        .padded-content
+          h1 PROGRAMS
+          ul
+            li Node js is used here
+            li Along with a jade template
+            li we're hoping for speedy dev
+            li and clean code
+          a(href="#").more-link MORE
+
+      article#circle-mission.span4
+        .padded-content
+          h1 MISSION
+          p
+            | Centre aligned for the
+            | centre div shouldn't contain 
+            | too much text though
+          a(href="#").more-link MORE
+
+      article#circle-vision.span4
+        .padded-content
+          h1 VISION
+          ul 
+            li Lorem ipsum text for
+            li placeholder, do don't read
+            li this any fu
+          a(href="#").more-link MORE
+
+  section#uniquesellingpoints.container
+    .row
+      #usp-staff.span6
+        .usp-img
+        h2 Professional Staff
+        p More placeholder text, would you credit it
+        p
+          a(href="#").more-link Staff profiles
+
+
+      #usp-methods.span6
+        .usp-img
+        h2 Innovative Methods
+        p Even more placeholder lorem ipsum, how much do you need?
+        p
+          a(href="#").more-link Staff profiles
+
+
